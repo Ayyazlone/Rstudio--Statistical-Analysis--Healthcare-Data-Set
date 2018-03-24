@@ -1,0 +1,19 @@
+library(plyr)
+library(dplyr)
+
+names(Health_care_dataset)
+
+data1=as.data.frame(Health_care_dataset)
+
+median(data1$Specialty)
+sd(data1$Specialty)
+
+table(data1$physcian)
+
+summary(data1$verysat)
+summary(data1$Specialty)
+
+t.test(data1$Specialty,data1$physcian)
+
+library(pwr)
+pwr.t.test(power=.8, d=.2, sig.level=.05, type=c("two.sample"))
